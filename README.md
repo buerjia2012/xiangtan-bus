@@ -1,16 +1,39 @@
-# 湘潭BUS（xiangtan-bus）
+<p align="center">
+  <h1 align="center">湘潭BUS</h1>
+  <p align="center">面向湘潭的只读公交查询 Android 应用</p>
+</p>
 
-一个面向湘潭的只读公交查询 Android 应用：附近线路、线路搜索、实时到站、线路走向、路线规划，以及完全离线的步行导航与离线地图。
+<p align="center">
+  <img src="https://img.shields.io/badge/platform-Android-3DDC84?style=flat-square&logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/minSdk-24-blue?style=flat-square" alt="minSdk 24">
+  <img src="https://img.shields.io/badge/targetSdk-34-blue?style=flat-square" alt="targetSdk 34">
+  <img src="https://img.shields.io/github/v/release/buerjia2012/xiangtan-bus?style=flat-square" alt="Release">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT">
+</p>
 
-- 包名 `com.xtbus`，原生 Android，无 Gradle，`build.ps1` 手工流水线
-- minSdk 24 / targetSdk 34，仅依赖 Android Framework、`org.json`、4 个 androidx AAR 与 Mapsforge
-- 城市固定湘潭（车来了 `cityId=173`）
+<p align="center">
+  附近线路 · 实时到站 · 线路搜索 · 线路走向 · 路线规划 · 离线步行导航
+</p>
+
+---
+
+## 截图
+
+<p align="center">
+  <img src="docs/screenshots/01-home.png" width="232" alt="附近线路">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/02-search.png" width="232" alt="搜索结果">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/03-line.png" width="232" alt="线路详情">
+</p>
+
+<p align="center"><sub>附近线路 &nbsp;·&nbsp; 搜索结果 &nbsp;·&nbsp; 线路详情</sub></p>
 
 ## 功能
 
 | 功能 | 说明 |
 |---|---|
-| 附近线路 | 按站点分组，展示到站分钟、距离、最近使用 |
+| 附近线路 | 按站点分组，展示到站分钟、距离与最近使用 |
 | 搜索 | 线路/站点搜索，local-first（随包种子索引），未命中再联网 |
 | 线路详情 | 站序、车辆位置、最多 3 辆车的到站信息、换向、已过站折叠、30 秒刷新 |
 | 线路走向 | Canvas 自绘折线，不接地图 SDK |
@@ -19,16 +42,31 @@
 | 离线地图 | Mapsforge 渲染湘潭 `.map`，仅用于步行导航页 |
 | 字号设置 | 标准/大字两套令牌，同一包内切换 |
 
-## 截图
+## 技术要点
 
-<p align="center">
-  <img src="docs/screenshots/01-home.png" width="240" alt="附近线路">
-  <img src="docs/screenshots/02-search.png" width="240" alt="搜索结果">
-  <img src="docs/screenshots/03-line.png" width="240" alt="线路详情">
-  <img src="docs/screenshots/04-settings.png" width="240" alt="设置">
-</p>
+- 包名 `com.xtbus`，原生 Android，无 Gradle，`build.ps1` 手工流水线
+- 仅依赖 Android Framework、`org.json`、4 个 androidx AAR 与 Mapsforge
+- 城市固定湘潭（车来了 `cityId=173`），不涉及登录、支付、乘车码
 
-<p align="center"><sub>附近线路 · 搜索 · 线路详情 · 设置</sub></p>
+## 快速开始
+
+```powershell
+cd xtbus-app\app
+powershell -ExecutionPolicy Bypass -File .\build.ps1
+# 产物：xtbus-app/app/xtbus.apk
+```
+
+```powershell
+adb install -r xtbus.apk
+```
+
+构建环境：
+
+- Android SDK build-tools 36.1.0、platforms/android-34、JDK 21
+- 环境变量 `ANDROID_SDK_ROOT`、`XTBUS_LIBS`（jar/AAR 目录，缺省为工程内 `libs/`）
+- 签名口令 `XTBUS_STORE_PASS`、`XTBUS_KEY_PASS`，或工程根目录未入库的 `keystore.properties`
+
+中文路径下脚本会自动建立 `D:\xtbus_work` 联接点。仓库不提供 `.jks` 与已签名 APK，请使用自己的证书。
 
 ## 目录
 
@@ -44,28 +82,6 @@ xtbus-app/
 ```
 
 技术细节见 [湘潭BUS-项目技术文档.md](湘潭BUS-项目技术文档.md)。
-
-## 构建
-
-```powershell
-cd xtbus-app\app
-powershell -ExecutionPolicy Bypass -File .\build.ps1
-# 产物：xtbus-app/app/xtbus.apk
-```
-
-需要：
-
-- Android SDK build-tools 36.1.0、platforms/android-34、JDK 21
-- 环境变量 `ANDROID_SDK_ROOT`、`XTBUS_LIBS`（jar/AAR 目录，缺省为工程内 `libs/`）
-- 签名口令 `XTBUS_STORE_PASS`、`XTBUS_KEY_PASS`，或工程根目录未入库的 `keystore.properties`
-
-中文路径下脚本会自动建立 `D:\xtbus_work` 联接点；本仓库不提供 `.jks` 与已签名 APK，请使用自己的证书。
-
-安装：
-
-```powershell
-adb install -r xtbus.apk
-```
 
 ## 数据与许可
 
