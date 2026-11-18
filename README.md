@@ -19,6 +19,17 @@
 | 离线地图 | Mapsforge 渲染湘潭 `.map`，仅用于步行导航页 |
 | 字号设置 | 标准/大字两套令牌，同一包内切换 |
 
+## 截图
+
+<p align="center">
+  <img src="docs/screenshots/01-home.png" width="240" alt="附近线路">
+  <img src="docs/screenshots/02-search.png" width="240" alt="搜索结果">
+  <img src="docs/screenshots/03-line.png" width="240" alt="线路详情">
+  <img src="docs/screenshots/04-settings.png" width="240" alt="设置">
+</p>
+
+<p align="center"><sub>附近线路 · 搜索 · 线路详情 · 设置</sub></p>
+
 ## 目录
 
 ```
