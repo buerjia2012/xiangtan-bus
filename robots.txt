@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://buerjia2012.github.io/xiangtan-bus/sitemap.xml
