@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  路线规划详情页：顶栏（返回 / 标题 / 方案序号 / 上一条下一条）+ 单个方案的时间轴。
+  实时只更新第一段公交，底部固定一行“更新于”。
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/xt_paper"
+    android:orientation="vertical">
+
+    <!-- 顶栏：返回 / 标题 / 页码 / 上一条 下一条，统一 48dp 行高、6/8dp 间距 -->
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="4dp"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="@color/xt_ink"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingLeft="4dp"
+            android:paddingRight="8dp"
+            android:text="路线详情"
+            android:textColor="@color/xt_ink"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text=""
+            android:textColor="@color/xt_ink2"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/prev"
+            android:layout_width="44dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="4dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="@color/xt_pine"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="44dp"
+            android:layout_height="48dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="›"
+            android:textColor="@color/xt_pine"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pull"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="14dp" />
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="12dp"
+        android:paddingTop="6dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="10dp"
+        android:text=""
+        android:textColor="@color/xt_ink3"
+        android:textSize="11sp" />
+</LinearLayout>

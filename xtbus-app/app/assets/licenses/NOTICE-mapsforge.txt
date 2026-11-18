@@ -1,0 +1,41 @@
+Mapsforge 0.25.0 — 第三方库声明 / Third-party notice
+====================================================
+
+本应用（湘潭BUS / com.xtbus）在“步行导航”页内嵌离线矢量地图，使用下列库：
+
+  mapsforge-core-0.25.0.jar
+  mapsforge-map-0.25.0.jar
+  mapsforge-map-reader-0.25.0.jar
+  mapsforge-map-android-0.25.0.jar
+  mapsforge-themes-0.25.0.jar
+
+版权所有：Mapsforge contributors
+许可证：GNU Lesser General Public License v3.0（LGPL-3.0）
+许可证全文：见同目录 LGPL-3.0.txt，或 https://www.gnu.org/licenses/lgpl-3.0.txt
+项目主页：https://github.com/mapsforge/mapsforge
+
+修改情况
+--------
+以上 5 个 jar 均为 Maven Central 上 org.mapsforge 0.25.0 发行版的原始二进制，
+未做任何修改（未改包名、未删类、未打补丁、未内联进自有代码）。
+应用只以“调用库的公开 API”的方式链接它们。
+
+渲染主题 assets/xt-map-theme.xml 为本项目自行编写的精简主题（version 5），不使用任何
+SVG 符号或图案资源，因此不依赖 androidsvg。主题是数据文件，不属于库代码。
+assets/xt-map-theme-waterfix.xml 是同一主题的对照变体（仅调整水系与绿地的绘制顺序），
+默认不启用。地图数据（xiangtan.map）与主题都不在此声明范围内。
+
+如何替换这个库
+--------------
+1. 库以独立 jar 的形式放在工程 libs/jars/ 下，构建脚本（aapt2 → javac → d8）原样
+   把它们编进 APK，不经过任何混淆或加固，也没有对 jar 内容做校验。
+2. 任何人都可以把自己重新编译的 mapsforge（同版本或兼容版本）jar 放进
+   libs/jars/ 覆盖原文件，然后执行同一份构建脚本重新链接出 APK——
+   应用代码与 mapsforge 之间只通过公开 API 交互，替换后无需改动应用源码。
+3. 构建脚本、清单、渲染主题（assets/theme/xt-map-theme.xml）随工程提供，来源可复现：
+   应用不使用 R8/ProGuard，不剥离符号，也不把库代码内联到自有类里。
+
+地图数据
+--------
+湘潭离线矢量数据 xiangtan.map 由 © OpenStreetMap contributors 的数据（ODbL 1.0）
+经 osmosis + mapsforge-map-writer 裁剪生成，仅含几何与标签，不含地图瓦片图片。

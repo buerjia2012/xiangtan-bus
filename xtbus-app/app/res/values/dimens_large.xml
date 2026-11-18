@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  大字版令牌。对应 names 后缀 _l。
+  阶梯：页面边距 20 / 行高 76 / 触控 56 / 圆角 20·16·12
+  与标准版的差异不只是倍数：字级对比更陡（ETA:线路号 = 1.67 vs 1.41）。
+-->
+<resources>
+    <!-- 间距 -->
+    <dimen name="xt_gutter_l">20dp</dimen>
+    <dimen name="xt_card_pad_l">18dp</dimen>
+    <dimen name="xt_row_h_l">76dp</dimen>
+    <dimen name="xt_group_gap_l">16dp</dimen>
+    <dimen name="xt_sec_gap_l">34dp</dimen>
+    <dimen name="xt_gap_l">12dp</dimen>
+    <dimen name="xt_touch_l">56dp</dimen>
+
+    <!-- 结构 -->
+    <dimen name="xt_icon_l">26dp</dimen>
+    <dimen name="xt_appbar_h_l">88dp</dimen>
+    <dimen name="xt_search_h_l">64dp</dimen>
+    <dimen name="xt_plate_w_l">94dp</dimen>
+    <dimen name="xt_plate_h_l">56dp</dimen>
+    <dimen name="xt_badge_h_l">56dp</dimen>
+    <dimen name="xt_badge_min_l">58dp</dimen>
+    <!-- 号牌最大宽度：超过就折行，避免挤压终点名 -->
+    <dimen name="xt_badge_max_l">92dp</dimen>
+    <dimen name="xt_badge_font_l">24sp</dimen>
+
+    <!-- 形状 -->
+    <dimen name="xt_r_card_l">20dp</dimen>
+    <dimen name="xt_r_plate_l">16dp</dimen>
+    <dimen name="xt_r_badge_l">10dp</dimen>
+
+    <!-- 字号 -->
+    <dimen name="xt_eta_l">40sp</dimen>
+    <dimen name="xt_plate_word_l">21sp</dimen>
+    <dimen name="xt_appbar_l">26sp</dimen>
+    <dimen name="xt_line_no_l">24sp</dimen>
+    <dimen name="xt_station_l">21sp</dimen>
+    <dimen name="xt_dest_l">17sp</dimen>
+    <dimen name="xt_body_l">18sp</dimen>
+    <dimen name="xt_body_s_l">16sp</dimen>
+    <dimen name="xt_label_l">16sp</dimen>
+    <dimen name="xt_caption_l">14sp</dimen>
+
+    <!-- 路线详情：结论句与「现在这一步」 -->
+    <dimen name="xt_verdict_l">26sp</dimen>
+
+    <!-- 时间轴 -->
+    <dimen name="xt_tl_row_h_l">68dp</dimen>
+    <dimen name="xt_tl_track_l">3dp</dimen>
+    <dimen name="xt_num_l">32dp</dimen>
+    <dimen name="xt_num_font_l">14sp</dimen>
+</resources>

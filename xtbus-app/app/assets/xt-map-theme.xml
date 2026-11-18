@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  步行导航页的离线底图样式（Mapsforge render theme，version 5）。
+  只画水系、绿地、建筑、道路和地名，不用任何 SVG 符号/图案，因此不需要 androidsvg 依赖。
+  颜色沿用站牌制式的暖纸/墨绿。
+  注意：rule 必须直接挂在 rendertheme 下，mapsforge 不认 <rules> 包一层。
+-->
+<rendertheme xmlns="http://mapsforge.org/renderTheme" version="5"
+    map-background="#F7F3EC" map-background-outside="#EFE9DE">
+
+    <rule e="way" k="landuse" v="forest|wood|grass|meadow|farmland|orchard|village_green|cemetery">
+        <area fill="#E7EEDD"/>
+    </rule>
+    <rule e="way" k="leisure" v="park|garden|pitch|nature_reserve|playground">
+        <area fill="#E7EEDD"/>
+    </rule>
+    <rule e="way" k="natural" v="wood|scrub|heath|grassland|beach|sand">
+        <area fill="#E7EEDD"/>
+    </rule>
+
+    <!--
+      水系必须排在绿地之后：mapsforge 按规则顺序从下往上画，
+      水面先画就会被后面的大片绿地盖掉，江面只剩中心线。
+    -->
+    <rule e="way" k="natural" v="water|wetland|bay">
+        <area fill="#8FBFD9"/>
+    </rule>
+    <rule e="way" k="landuse" v="reservoir|basin">
+        <area fill="#8FBFD9"/>
+    </rule>
+    <!-- 江心洲等水面内部岛屿：用底色回填，避免被水面一并涂蓝 -->
+    <rule e="way" k="waterway" v="riverbank|canal|dock">
+        <area fill="#8FBFD9"/>
+    </rule>
+    <!-- 河道中心线：加宽到 4.5，即使面填充异常也能看出江的走向 -->
+    <rule e="way" k="waterway" v="river|stream|ditch|drain">
+        <line stroke="#8FBFD9" stroke-width="4.5"/>
+    </rule>
+
+    <rule e="way" k="building" v="*">
+        <area fill="#EDE6DA" stroke="#DED4C4" stroke-width="0.3"/>
+    </rule>
+
+    <!-- 小路在下，主路在上 -->
+    <rule e="way" k="highway" v="footway|path|steps|pedestrian|living_street|service|track|unclassified|residential">
+        <line stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
+    </rule>
+    <rule e="way" k="highway" v="tertiary|secondary">
+        <line stroke="#F0DFBE" stroke-width="3.2" stroke-linecap="round"/>
+    </rule>
+    <rule e="way" k="highway" v="primary|trunk|motorway">
+        <line stroke="#EBCE9C" stroke-width="4.2" stroke-linecap="round"/>
+    </rule>
+
+    <rule e="way" k="railway" v="rail|light_rail|subway|tram">
+        <line stroke="#CFC6B8" stroke-width="1.2"/>
+    </rule>
+
+    <!-- 地名：只画到「区/镇/村」，再细会糊成一片（v5 里点标注用 caption，不是 text） -->
+    <rule e="node" k="place" v="city|town|suburb|village|hamlet">
+        <caption k="name" font-size="13" fill="#6B655B" stroke="#F7F3EC" stroke-width="2.5"/>
+    </rule>
+</rendertheme>

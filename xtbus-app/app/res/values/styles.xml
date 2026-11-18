@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 站牌 · 墨与朱砂：状态栏与页面同色，避免顶部出现灰色横条 -->
+    <style name="Theme.Xtbus" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/xt_paper</item>
+        <item name="android:colorBackground">@color/xt_paper</item>
+        <item name="android:statusBarColor">@color/xt_paper</item>
+        <item name="android:navigationBarColor">@color/xt_paper</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <!-- 控件强调色（单选、光标、对话框按钮）跟随主色，避免出现系统青绿 -->
+        <item name="android:colorAccent">@color/xt_pine</item>
+        <item name="android:colorControlActivated">@color/xt_pine</item>
+        <item name="android:colorControlNormal">@color/xt_ink3</item>
+        <item name="android:textColorPrimary">@color/xt_ink</item>
+        <item name="android:textColorSecondary">@color/xt_ink2</item>
+    </style>
+</resources>

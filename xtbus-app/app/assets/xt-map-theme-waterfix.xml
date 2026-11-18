@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  旧主题的「仅修湖」变体：与 xt-map-theme.xml 逐字节一致，
+  唯一差别是把 natural=water 的面规则从绿地之前挪到绿地之后，
+  这样 landuse/leisure/natural 的绿地不会再把湖面盖掉。
+  这份只是给对照截图用，默认不启用（WalkMapPanel 里仍指 xt-map-theme.xml）。
+-->
+<rendertheme xmlns="http://mapsforge.org/renderTheme" version="5"
+    map-background="#F7F3EC" map-background-outside="#EFE9DE">
+
+    <rule e="way" k="waterway" v="river|canal|stream|ditch|drain">
+        <line stroke="#C6DCE9" stroke-width="1.4"/>
+    </rule>
+
+    <rule e="way" k="landuse" v="forest|wood|grass|meadow|farmland|orchard|village_green|cemetery">
+        <area fill="#E7EEDD"/>
+    </rule>
+    <rule e="way" k="leisure" v="park|garden|pitch|nature_reserve|playground">
+        <area fill="#E7EEDD"/>
+    </rule>
+    <rule e="way" k="natural" v="wood|scrub|heath|grassland|beach|sand">
+        <area fill="#E7EEDD"/>
+    </rule>
+
+    <rule e="way" k="natural" v="water|wetland|bay">
+        <area fill="#C6DCE9"/>
+    </rule>
+
+    <rule e="way" k="building" v="*">
+        <area fill="#EDE6DA" stroke="#DED4C4" stroke-width="0.3"/>
+    </rule>
+
+    <!-- 小路在下，主路在上 -->
+    <rule e="way" k="highway" v="footway|path|steps|pedestrian|living_street|service|track|unclassified|residential">
+        <line stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
+    </rule>
+    <rule e="way" k="highway" v="tertiary|secondary">
+        <line stroke="#F0DFBE" stroke-width="3.2" stroke-linecap="round"/>
+    </rule>
+    <rule e="way" k="highway" v="primary|trunk|motorway">
+        <line stroke="#EBCE9C" stroke-width="4.2" stroke-linecap="round"/>
+    </rule>
+
+    <rule e="way" k="railway" v="rail|light_rail|subway|tram">
+        <line stroke="#CFC6B8" stroke-width="1.2"/>
+    </rule>
+
+    <!-- 地名：只画到「区/镇/村」，再细会糊成一片（v5 里点标注用 caption，不是 text） -->
+    <rule e="node" k="place" v="city|town|suburb|village|hamlet">
+        <caption k="name" font-size="13" fill="#6B655B" stroke="#F7F3EC" stroke-width="2.5"/>
+    </rule>
+</rendertheme>

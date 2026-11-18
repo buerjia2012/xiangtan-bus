@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 设置入口齿轮：8 齿 + 中心挖孔，实心填充，颜色与正文次级文字一致。 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:fillColor="#FF665E53"
+        android:fillType="evenOdd"
+        android:pathData="M12,4.2 A7.8,7.8 0 1 1 11.99,4.2 Z M12,9.1 A2.9,2.9 0 1 0 12.01,9.1 Z" />
+
+    <group android:pivotX="12" android:pivotY="12" android:rotation="0">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+    <group android:pivotX="12" android:pivotY="12" android:rotation="45">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+    <group android:pivotX="12" android:pivotY="12" android:rotation="90">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+    <group android:pivotX="12" android:pivotY="12" android:rotation="135">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+    <group android:pivotX="12" android:pivotY="12" android:rotation="180">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+    <group android:pivotX="12" android:pivotY="12" android:rotation="225">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+    <group android:pivotX="12" android:pivotY="12" android:rotation="270">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+    <group android:pivotX="12" android:pivotY="12" android:rotation="315">
+        <path android:fillColor="#FF665E53" android:pathData="M10.9,1.6 h2.2 v4.0 h-2.2 z" />
+    </group>
+</vector>

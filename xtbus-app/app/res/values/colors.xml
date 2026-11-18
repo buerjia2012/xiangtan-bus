@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  站牌 · 墨与朱砂 —— 颜色角色
+  规则：饱和色只用于「线路号牌」和「到站牌」，一屏面积 < 8%。
+-->
+<resources>
+    <!-- 中性：暖纸 / 墨 -->
+    <color name="xt_paper">#FAF7F2</color>      <!-- surface            页面底 -->
+    <color name="xt_card">#FFFFFF</color>       <!-- surface-container  卡片 -->
+    <color name="xt_sunken">#F2ECE2</color>     <!-- surface-container-low 弱区块 -->
+    <color name="xt_line">#E8E0D3</color>       <!-- outline-variant    行分隔线 -->
+    <color name="xt_line_strong">#D6CBBA</color><!-- outline            需被看见的边 -->
+
+    <color name="xt_ink">#1E1A16</color>        <!-- on-surface         主文字 -->
+    <color name="xt_ink2">#665E53</color>       <!-- on-surface-variant 次要文字 -->
+    <color name="xt_ink3">#8C8377</color>       <!-- outline            禁用 / 已过站 -->
+
+    <!-- 主色：站牌墨绿 -->
+    <color name="xt_pine">#16302B</color>       <!-- primary            线路牌 / 主按钮 -->
+    <color name="xt_pine90">#E7EDEA</color>     <!-- primary-container  正常到站牌 -->
+    <color name="xt_pine70">#4F6E63</color>     <!-- primary fixed dim  图例 -->
+    <color name="xt_pine_on">#FFFFFF</color>    <!-- on-primary -->
+
+    <!-- 信号：朱砂（仅「即将到站」「候车站」） -->
+    <color name="xt_signal">#C0452F</color>     <!-- signal -->
+    <color name="xt_signal90">#F7E4DD</color>   <!-- signal-container -->
+    <!-- 车辆所在站行：8% 朱砂底，整行高亮但不抢「候车站」的实心圆 -->
+    <color name="xt_signal_tint">#14C0452F</color>
+    <!-- 按压涟漪 -->
+    <color name="xt_scrim">#1A1E1A16</color>
+    <!-- 线路走向页提示条底色 -->
+    <color name="xt_hint_bg">#F2FAF7F2</color>
+</resources>
